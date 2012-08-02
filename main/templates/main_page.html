@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% block title %} WordBox {% endblock %}
+
+{% block style %}
+  a {text-decoration:none}
+
+  #wholewrap {width:960px; margin:0 auto}
+  #wholewrap div.space {height:10px}
+
+  #headerBar {text-align:right; height:15px}
+  #headerBar li{font:bold 15px dotum; list-style:none}
+
+  #header {text-align:center; height:50px}
+  #header li.siteTitle{font:bold 50px dotum; list-style:none}
+
+  #content {text-align:center}
+
+  #footer {text-align:center}
+  #footer li{display:inline}
+  #footer span.license{color:blue}
+{% endblock %}
+
+{% block headBar %}
+<ul>
+  <li><a href="/">account</a></li>
+</ul>
+{% endblock %}
+
+{% block head %} WordBox {% endblock %}
+{% block content %}
+<div class="space"></div> 
+
+<form action="/" method="post">{% csrf_token %}
+{{form.as_p}}
+<input type="submit" value="Submit" />
+</form>
+{% endblock %}
+
+{% block footer %} 
+<ul>
+  <li><span class="license">(C)COPYLEFT</span></l1>
+  <li>proudly powered by JH Corporation</li>
+</ul>
+{% endblock %}
+
